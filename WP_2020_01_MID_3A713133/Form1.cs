@@ -11,17 +11,17 @@ using WP_2020_01_MID_3A713133.Properties;
 
 namespace WP_2020_01_MID_3A713133
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form // 主程式大綱
     {
-        List<Image> pc = new List<Image>();
+        List<Image> pc = new List<Image>(); //宣告一個陣列pc，陣列裡面放圖片
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) //載入的時候
         {
-            pc.Add(Resources._1);
+            pc.Add(Resources._1); //陣列裡面放入圖片
             pc.Add(Resources._2);
             pc.Add(Resources._3);
             pc.Add(Resources._4);
@@ -35,16 +35,16 @@ namespace WP_2020_01_MID_3A713133
             pc.Add(Resources._12);
         }
 
-        private void btn_Click(object sender, EventArgs e)
+        private void btn_Click(object sender, EventArgs e) //觸發事件 當按鈕按下的時候
         {
-            if (string.IsNullOrWhiteSpace(tex.Text))
+            if (string.IsNullOrWhiteSpace(tex.Text)) //如果輸入是無空白鍵
             {
-                MessageBox.Show("請輸入生肖", "錯誤警告");
-                return;//重新檢查
+                MessageBox.Show("請輸入生肖", "錯誤警告"); //會跳出視窗("內容文字","視窗文字")
+                return;//終止程式碼
             }
-            else
+            else //否則
             {
-                switch(tex.Text)
+                switch(tex.Text) //索引textbox裡面的內容
                 {
                     case "鼠":
                         pic.Image = pc[0];
@@ -82,7 +82,7 @@ namespace WP_2020_01_MID_3A713133
                     case "豬":
                         pic.Image = pc[11];
                         break;
-                    default:
+                    default: //不與上述12種方案相同的則執行此函數
                         MessageBox.Show("請重新輸入生肖", "錯誤警告");
                         break;
                 }
